@@ -1,0 +1,43 @@
+10
+
+dir
+96485
+svn://xiaoxiaobing@199.200.0.40/ssl/dev/Branches/SSLM7.6.2/M7.6.2-L3VPN-optimize/EasyApp-CUSTOM/Source/Android/AndroidStudio/SangforSDK/libs
+svn://xiaoxiaobing@199.200.0.40/ssl/dev
+
+
+
+2018-03-20T03:51:28.519207Z
+81644
+zhongxiangwei
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9c576b02-8477-477f-a88b-4a62d7cf70a5
+
+SangforSDK.jar
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+

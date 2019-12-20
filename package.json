@@ -1,0 +1,17 @@
+{
+  "name": "cn.com.ths.sangfor.vpn",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "cn.com.ths.sangfor.vpn",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "liuyx",
+  "license": "ISC"
+}

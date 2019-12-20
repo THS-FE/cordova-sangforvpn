@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cn.com.ths.sangfor.vpn" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>sangforvpn</name>
+    <js-module name="sangforvpn" src="www/sangforvpn.js">
+        <clobbers target="cordova.plugins.sangforvpn" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="sangforvpn">
+                <param name="android-package" value="cn.com.ths.sangfor.vpn.sangforvpn" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/sangforvpn.java" target-dir="src/cn/com/ths/sangfor/vpn/sangforvpn" />
+        <source-file framework="true" src="src/android/libs/SangforSDK.jar" target-dir="libs" />
+        <source-file framework="true" src="src/android/libs/armeabi/libauth_forward.so" target-dir="libs/armeabi" />
+        <source-file framework="true" src="src/android/libs/armeabi/libhttps.so" target-dir="libs/armeabi" />
+        <source-file framework="true" src="src/android/libs/armeabi/libpkcs12cert.so" target-dir="libs/armeabi" />
+        <source-file framework="true" src="src/android/libs/armeabi/libsvpnservice.so" target-dir="libs/armeabi" />
+        <source-file framework="true" src="src/android/libs/armeabi-v7a/libauth_forward.so" target-dir="libs/armeabi-v7a" />
+        <source-file framework="true" src="src/android/libs/armeabi-v7a/libhttps.so" target-dir="libs/armeabi-v7a" />
+        <source-file framework="true" src="src/android/libs/armeabi-v7a/libpkcs12cert.so" target-dir="libs/armeabi-v7a" />
+        <source-file framework="true" src="src/android/libs/armeabi-v7a/libsvpnservice.so" target-dir="libs/armeabi-v7a" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
+            <uses-library android:name="org.apache.http.legacy" android:required="false" />
+            <service android:exported="false" android:name="com.sangfor.ssl.service.timeqry.TimeQryService">
+                <intent-filter>
+                    <action android:name="com.sangfor.ssl.vpn.sdk.action.ACTION_TIMEQRY" />
+                </intent-filter>
+            </service>
+            <service android:exported="false" android:name="com.sangfor.ssl.l3vpn.service.EasyappSvpnService" android:permission="android.permission.BIND_VPN_SERVICE">
+                <intent-filter>
+                    <action android:name="com.sangfor.ssl.l3vpn.service.EasyappSvpnService" />
+                </intent-filter>
+            </service>
+        </config-file>
+    </platform>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="sangforvpn">
+                <param name="ios-package" value="sangforvpn" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/sangforvpn.m" />
+        <!--深信服SDK-->
+        <source-file src="src/ios/sdk/libSangforSdk.a" framework="true" />
+        <source-file src="src/ios/errheader.m" />
+        <source-file src="src/ios/SangforAuthHeader.m" />
+        <source-file src="src/ios/SangforAuthManager.m" />
+    
+        <framework src="CoreTelephony.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="SystemConﬁguration.framework" />
+        <framework src="NetworkExtension.framework" />
+        <framework src="̵AdSupport.framework" />
+        
+        <framework src="libresolv.9.tbd" />
+        <framework src="libc++.tbd" />
+        <framework src="libxml2.tbd" />
+        <framework src="libicucore.tbd" />
+        <framework src="libsqlite3.0.tbd" />
+
+    </platform>
+</plugin>
