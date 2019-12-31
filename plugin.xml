@@ -54,15 +54,15 @@
         <source-file src="src/ios/sangforvpn.m" />
         <!--深信服SDK-->
         <source-file src="src/ios/sdk/libSangforSdk.a" framework="true" />
-        <source-file src="src/ios/sdk/errheader.m" />
-        <source-file src="src/ios/sdk/SangforAuthHeader.m" />
-        <source-file src="src/ios/sdk/SangforAuthManager.m" />
+        <source-file src="src/ios/sdk/errheader.h" />
+        <source-file src="src/ios/sdk/SangforAuthHeader.h" />
+        <source-file src="src/ios/sdk/SangforAuthManager.h" />
     
         <framework src="CoreTelephony.framework" />
         <framework src="MobileCoreServices.framework" />
         <framework src="SystemConﬁguration.framework" />
         <framework src="NetworkExtension.framework" />
-        <framework src="̵AdSupport.framework" />
+        <framework src="AdSupport.framework" />
         
         <framework src="libresolv.9.tbd" />
         <framework src="libc++.tbd" />
